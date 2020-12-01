@@ -22,3 +22,10 @@ Route::get('/', function () {
 });*/
 
 Route::get('/categories', 'CategoryController@show');
+
+Route::get('/CreateUser', function () {
+    return view('CreateUser');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
