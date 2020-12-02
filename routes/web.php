@@ -23,9 +23,8 @@ Route::get('/', function () {
 
 Route::get('/categories', 'CategoryController@show');
 
-Route::get('/CreateUser', function () {
-    return view('CreateUser');
-});
+Route::get('/products/{type}', 'ProductController@showProducts')->name('filterCategory');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

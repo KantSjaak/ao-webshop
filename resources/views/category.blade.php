@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Category</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        .product_image img {
+            height: 18vw;
+            width: 18vw;
+            display: block;
+        }
+
+        .product_name p {
+            font-size: 2.5em;
+            margin-top: 4px;
+        }
+
+        #categories li {
+            list-style-type: none;
+        }
+    </style>
 </head>
 <body>
     <div id="header">
@@ -12,12 +33,14 @@
     </div>
     <div id="content">
         <p> We hebben de volgende categorieën:</p>
-        @foreach($categories as $categorie)
-        <ul>
-            <li>Naam: {{$categorie->name}}</li>
-            <li>Gemaakt op: {{$categorie->created_at}}</li>
-        </ul>
-        @endforeach
+        <div id="categories">
+            @foreach($categories as $category)
+                <ul>
+                    <li class="product_image"><img src="{{$category->image_url}}" alt="{{$category->name}}"></li>
+                    <li class="product_name"><p>{{$category->name}}</p></li>
+                </ul>
+            @endforeach
+        </div>
     </div>
 </body>
 </html>
