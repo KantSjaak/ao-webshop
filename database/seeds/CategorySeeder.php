@@ -40,7 +40,7 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('Categories')->insert([
             'name' => 'Desktop Towers',
-            'image_url' => 'https://tweakers.net/i/LGohwHV_61bQDX-3m5X9rT5mm0Q=/fit-in/x800/filters:strip_icc():strip_exif()/i/2003829684.jpeg?f=imagegallery',
+            'image_url' => 'https://www.megekko.nl/catimg/2323.png',
             'created_at' => Carbon\Carbon::now(),
             'updated_at' => Carbon\Carbon::now()
         ]);

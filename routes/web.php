@@ -13,17 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-/*Route::get('/categories', function () {
-    return view('category');
-});*/
+Route::view('/', 'welcome');
 
 Route::get('/categories', 'CategoryController@show');
 
 Route::get('/products/{type}', 'ProductController@showProducts')->name('filterCategory');
+
+Route::get('/product/{id}', 'ProductController@showProduct');
 
 Auth::routes();
 

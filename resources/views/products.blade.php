@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Category</title>
+    <title>Products</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -20,40 +20,30 @@
             margin-left: 20px;
             margin-right: 20px;
         }
-
-        .product_image img {
-            height: 18vw;
-            width: 18vw;
-            display: block;
-        }
-
-        .product_name p {
-            font-size: 2.5em;
-            margin-top: 4px;
-        }
-
-        #categories li {
-            list-style-type: none;
-        }
     </style>
 </head>
 <body>
 <div class="navbar">
     <a class="navbar-brand" href="{{url('/home')}}">Home</a>
 </div>
-    <div class="container">
-        <div class="row">
-            @foreach($categories as $category)
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{$category->image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$category->name}}</h5>
-                        <a href="{{ url('/products/'. $category->id) }}" class="btn btn-primary">View products</a>
-                    </div>
+<div class="container">
+    <div class="row">
+        @foreach($products as $product)
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{$product->image_url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{$product->name}}</h5>
+                    @if ($product->description !== null)
+                        <p class="card-text">{{$product->description}}</p>
+                    @else
+                        <p class="card-text">We weren't able to get product description</p>
+                    @endif
+                    <a href="{{ url('/product/'. $product->id) }}" class="btn btn-primary">View product</a>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
-
+</div>
 </body>
 </html>
+{{--<a href="{{ url('/home') }}">Home</a>--}}

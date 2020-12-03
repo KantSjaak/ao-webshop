@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function show()
+    public function showProduct($id)
     {
-        $products = \DB::table('products')->get();
+        $products = \DB::table('products')->where('id', '=', $id)->get();
 
         return view('product', [
             'products' => $products
@@ -18,7 +18,7 @@ class ProductController extends Controller
     public function showProducts($category) {
         $products = \DB::table('products')->where('category_id', '=', $category)->get();
 
-        return view('product', [
+        return view('products', [
             'products' => $products
         ]);
     }
