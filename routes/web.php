@@ -17,7 +17,7 @@ Route::view('/', 'welcome');
 
 Route::get('/categories', 'CategoryController@show');
 
-Route::get('/products/{type}', 'ProductController@showProducts')->name('filterCategory');
+Route::get('/products/{type}', 'ProductsController@showProducts');
 
 Route::get('/product/{id}', 'ProductController@showProduct');
 

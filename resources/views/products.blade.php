@@ -23,9 +23,7 @@
     </style>
 </head>
 <body>
-<div class="navbar">
-    <a class="navbar-brand" href="{{url('/home')}}">Home</a>
-</div>
+@include('header')
 <div class="container">
     <div class="row">
         @foreach($products as $product)
@@ -46,4 +44,3 @@
 </div>
 </body>
 </html>
-{{--<a href="{{ url('/home') }}">Home</a>--}}

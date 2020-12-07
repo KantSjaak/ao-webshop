@@ -14,12 +14,4 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
-    //filterCategory
-    public function showProducts($category) {
-        $products = \DB::table('products')->where('category_id', '=', $category)->get();
-
-        return view('products', [
-            'products' => $products
-        ]);
-    }
 }

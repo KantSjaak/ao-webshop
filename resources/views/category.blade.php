@@ -38,22 +38,20 @@
     </style>
 </head>
 <body>
-<div class="navbar">
-    <a class="navbar-brand" href="{{url('/home')}}">Home</a>
-</div>
-    <div class="container">
-        <div class="row">
-            @foreach($categories as $category)
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{$category->image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$category->name}}</h5>
-                        <a href="{{ url('/products/'. $category->id) }}" class="btn btn-primary">View products</a>
-                    </div>
+@include('header')
+<div class="container">
+    <div class="row">
+        @foreach($categories as $category)
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{$category->image_url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{$category->name}}</h5>
+                    <a href="{{ url('/products/'. $category->id) }}" class="btn btn-primary">View products</a>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
+</div>
 
 </body>
 </html>

@@ -18,21 +18,26 @@
     </style>
 </head>
 <body>
-<div class="navbar">
-    <a class="navbar-brand" href="{{url('/home')}}">Home</a>
-</div>
-<div class="content">
+@include('header')
+<div class="w-75 bg-light text-dark mx-auto">
     @foreach($products as $product)
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{$product->image_url}}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{$product->name}}</h5>
+        <h2 class="text-center">{{$product->name}}</h2>
+        <div class="container">
+            <div class="row mb-3">
+                <img class="w-25 h-25 d-inline-block" src="{{$product->image_url}}" alt="Card image cap">
                 @if ($product->description !== null)
-                    <p class="card-text">{{$product->description}}</p>
+                    <h5 class="text-break font-weight-normal ml-3">{{$product->description}}</h5>
                 @else
-                    <p class="card-text">We weren't able to get product description</p>
+                    <p>We weren't able to get product description</p>
                 @endif
-                <a href="#" class="btn btn-primary">View product</a>
+            </div>
+            <div class="row">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-text">&euro;{{$product->price}}</h4>
+                        <a href="#" class="btn btn-primary bg-success">Add to cart</a>
+                    </div>
+                </div>
             </div>
         </div>
     @endforeach
