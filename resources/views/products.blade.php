@@ -20,6 +20,11 @@
             margin-left: 20px;
             margin-right: 20px;
         }
+
+        .card-img-top {
+            max-width: 286px;
+            max-height: 286px;
+        }
     </style>
 </head>
 <body>

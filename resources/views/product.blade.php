@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -15,6 +16,10 @@
 
     <!-- Styles -->
     <style>
+        .mb-3 img {
+            max-width: 400px;
+            max-height: 400px;
+        }
     </style>
 </head>
 <body>
@@ -35,7 +40,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h4 class="card-text">&euro;{{$product->price}}</h4>
-                        <a href="#" class="btn btn-primary bg-success">Add to cart</a>
+                        <a href="{{ action('CartController@setCookies')}}" class="btn btn-primary bg-success">Add to cart</a>
                     </div>
                 </div>
             </div>
