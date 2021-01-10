@@ -61,6 +61,10 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ url('/categories/') }}">Categories</a>
+
+                                    <a class="dropdown-item" href="{{ url('/cart/') }}">Shopping Cart</a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

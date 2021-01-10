@@ -25,19 +25,23 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('testxdamirite', function () {
-    // Retrieve a piece of data from the session...
-    $value = session('key');
+route::get('/cart', 'CartController@show');
 
-    // Specifying a default value...
-    $value = session('key', 'default');
+route::get('/cart/{id}', 'CartController@save');
 
-    // Store a piece of data in the session...
-    session(['key' => 'value']);
-});
-
-route::get('/test/data', 'CartController@getAll');
+route::get('/cart/{pp}/{id}', 'CartController@push');
 
 route::get('/test/save', 'CartController@save');
 
 route::get('/test/clear', 'CartController@SessionClear');
+
+route::get('/test/getAll', 'CartController@getAll');
+
+route::get('/test/push', 'CartController@push');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

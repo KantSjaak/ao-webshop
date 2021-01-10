@@ -40,7 +40,8 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h4 class="card-text">&euro;{{$product->price}}</h4>
-                        <a href="{{ action('CartController@setCookies')}}" class="btn btn-primary bg-success">Add to cart</a>
+                        <a href="{{ url('cart/'. $product->id) }}" class="btn btn-primary bg-success">Add to
+                            cart</a>
                     </div>
                 </div>
             </div>
@@ -50,3 +51,4 @@
 
 </body>
 </html>
+{{--json_encode($product)--}}
