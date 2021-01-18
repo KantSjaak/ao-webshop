@@ -26,7 +26,8 @@
             @foreach($data as $value)
                 <li class="list-group-item">
                     <h4>{{$value['name']}}</h4>
-                    <h5 class="card-text">Price: &euro;{!! \App\Helper::Multiply($value['price'], $value['amount']) !!}</h5>
+                    <h5 class="card-text">Price:
+                        &euro;{!! \App\Helper::Multiply($value['price'], $value['amount']) !!}</h5>
                     <h5 class="card-text">Amount: {{$value['amount']}}</h5>
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="{{ url('/cart/0/'. $value['id']) }}" type="button" class="btn btn-outline-danger"><i
@@ -38,6 +39,11 @@
                     </div>
                 </li>
             @endforeach
+            <li class="list-group-item"><h3>Total cost: &euro;{!!  \App\Helper::AddMultiple($data)!!}</h3></li>
+            <a href="{{ url('/order') }}" class="btn btn-primary bg-success"><p class="m-b-0 d-inline">Continue order</p> <i
+                        class="bi bi-arrow-right"
+                        style="font-size: 1.7rem;"></i>
+            </a>
         </ul>
     @else
         <h2 class="text-danger text-center">There aren't any products in your shopping cart!</h2>

@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
     {
         DB::table('Categories')->insert([
             'name' => 'Monitors',
-            'image_url' => 'https://www.megekko.nl/catimg/2071.png',
+            'image_url' => 'https://www.megekko.nl/catimg/2071k.png',
             'created_at' => Carbon\Carbon::now(),
             'updated_at' => Carbon\Carbon::now()
         ]);

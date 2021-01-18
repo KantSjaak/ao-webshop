@@ -25,23 +25,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-route::get('/cart', 'CartController@show');
+route::get('/cart', 'CartController@show')->middleware(\App\Http\Middleware\EnsureLogin::class);
 
 route::get('/cart/{id}', 'CartController@save');
 
 route::get('/cart/{pp}/{id}', 'CartController@push');
 
-route::get('/test/save', 'CartController@save');
+route::get('/order', 'OrderController@SendOrder')->middleware(\App\Http\Middleware\EnsureLogin::class);
 
-route::get('/test/clear', 'CartController@SessionClear');
-
-route::get('/test/getAll', 'CartController@getAll');
-
-route::get('/test/push', 'CartController@push');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+route::get('/orders', 'OrderController@GetOrders');

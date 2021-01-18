@@ -2,11 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\Category;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Category::class, function (Faker $faker) {
     return [
-        //
+        'name' => $faker->word,
+        'image_url' => 'https://www.megekko.nl/catimg/2071.png',
     ];
 });
