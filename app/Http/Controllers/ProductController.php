@@ -14,4 +14,13 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+
+    public function showProductsByCategory($category)
+    {
+        $products = \DB::table('products')->where('category_id', '=', $category)->get();
+
+        return view('products', [
+            'products' => $products
+        ]);
+    }
 }
